@@ -4,6 +4,7 @@ import CircleOne from '../components/images/circleOne.svg'
 import CircleTwo from '../components/images/circleTwo.svg'
 import CircleThree from '../components/images/circleThree.svg'
 import Spacing from '../components/images/spacing.svg'
+import EllipseBackground from '../miniComponents/elipseBackground';
 
 const circles = [CircleOne, Spacing, CircleTwo, Spacing, CircleThree]
 const destinations = ['/', '/method', '/time']
@@ -18,18 +19,6 @@ const Menu = (props) => {
         margin: '20px 0px 0px 0px',
         display: 'flex',
         justifyContent: 'center',
-    }
-    const ovalBackground = {
-        content: `''`,
-        position: 'absolute',
-        width: '130%',
-        height: '250%',
-        background: `linear-gradient(to right, ${ props.gradient.first }, ${ props.gradient.second })`,
-        borderRadius: '50%',
-        marginLeft: '50%',
-        transform: 'translate(-50%, -45%)',
-        boxShadow: '0 5px 20px #666666',
-        zIndex: '-1',
     }
     const titleStyle = {
         fontFamily: 'Righteous',
@@ -64,12 +53,12 @@ const Menu = (props) => {
     }
     return (
         <div style={ containerStyle }>
-            <span style={ ovalBackground }/> 
+            <EllipseBackground  />
             <div style={ menuStyle }>
                 { circles.map((circle, index) => { 
                     let iteration = Math.floor((index+1)/2)
                     console.log(`currentStep: ${props.currentStep} iteration: ${iteration}}`)
-                    if(circle == Spacing) {
+                    if(circle === Spacing) {
                         return <img src={ circle } style={ iteration <= props.currentStep ? selectedSpacingStyle : spacingStyle }/>
                     } else {
                         return <Link to={ destinations[iteration] }><img src={ circle } style={ iteration <= props.currentStep ? selectedCircleStyle : circleStyle }/></ Link>

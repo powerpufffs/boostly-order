@@ -1,8 +1,8 @@
 import React from 'react'
+import { PageContext } from '../context/PageContext'
 import Layout from '../components/layout'
 
-const items = 
-[
+const items = [
     {
         title: 'The Margherita',
         price: 10.00,
@@ -24,22 +24,25 @@ const items =
         description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione!'
     }
 ]
-const gradient =
-{
-    first: '#FC8F52',
-    second: '#F17275',   
+const context = {
+    destination: '/method',
+    gradient: {
+        first: '#FC8F52',
+        second: '#F17275',   
+    },
 }
 const OrderPage = () => {
     return (
         <>
-            <Layout 
-                title="What'll it be?" 
-                items={ items } 
-                gradient={ gradient } 
-                cellType={ 1 } 
-                destination='/method' 
-                currentStep={ 0 }
-            /> 
+            <PageContext.Provider value={ context }>
+                <Layout 
+                    title="What'll it be?" 
+                    items={ items } 
+                    cellType={ 1 } 
+                    destination='/method' 
+                    currentStep={ 0 }
+                /> 
+            </PageContext.Provider>
         </>
     )
 }

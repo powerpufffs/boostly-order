@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { PageContext } from '../context/PageContext'
 
 const Cell = (props) => {
   const [isHovered, setHover] = useState(false)
+  const value = useContext(PageContext)
   const cellStyle = { 
     position: 'relative',
     width: '80%',
     height: 'auto',
     margin: '5px auto',
     padding: '4px 30px',
-    background: `linear-gradient(to right, ${ props.gradient.first }, ${ props.gradient.second })`,
+    background: `linear-gradient(to right, ${ value.gradient.first }, ${ value.gradient.second })`,
     borderRadius: 12,
     color: '#FFFFFF',
     alignSelf: 'center',

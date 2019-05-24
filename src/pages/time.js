@@ -1,4 +1,5 @@
 import React from 'react'
+import { PageContext } from '../context/PageContext'
 import Layout from '../components/layout'
 
 const items = 
@@ -19,21 +20,24 @@ const items =
     text: '12:30pm',
   }, 
 ]
-const gradient =
-{
+const context = {
+  destination: '/index',
+  gradient: {
     first: '#4A97FC',
-    second: '#7B57FB',   
+    second: '#7B57FB',  
+  },
 }
 const TimePage = () => {
   return (
     <div>
-      <Layout 
-        title="Choose a Time" 
-        items={ items } 
-        gradient={ gradient } 
-        cellType={ 2 } 
-        currentStep={ 3 }
-      />
+       <PageContext.Provider value={ context }>
+        <Layout 
+          title="Choose a Time" 
+          items={ items } 
+          cellType={ 2 } 
+          currentStep={ 2 }
+        />
+       </PageContext.Provider>
     </div>
   )
 }
