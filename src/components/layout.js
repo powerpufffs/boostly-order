@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { PageContext } from '../context/PageContext'
 import { Link } from 'gatsby'
 import Menu from './menu'
 import LoadFont from './loadFont'
@@ -6,6 +7,7 @@ import Cell from './cell'
 import Cell2 from './cell2'
 
 const Layout = (props) => {
+  const value = useContext(PageContext)
   const listStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -28,7 +30,7 @@ const Layout = (props) => {
         <Menu title={ props.title } currentStep={ props.currentStep }/> 
         <div style={ listStyle }>
           { Array.from(props.items).map((item, index) => { 
-            return <Link to={ props.destination } style={{ textDecoration: 'none' }} key={ index } >{ createCell(item) }</Link>
+            return <Link to={ value.destination } style={{ textDecoration: 'none' }} key={ index } state={ item }>{ createCell(item) }</Link>
           }) }
         </div>
     </div>

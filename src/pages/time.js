@@ -21,7 +21,7 @@ const items =
   }, 
 ]
 const context = {
-  destination: '/index',
+  destination: '/confirm',
   gradient: {
     first: '#4A97FC',
     second: '#7B57FB',  
