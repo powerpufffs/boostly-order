@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby' 
-import CircleOne from '../components/images/circleOne.svg'
-import CircleTwo from '../components/images/circleTwo.svg'
-import CircleThree from '../components/images/circleThree.svg'
-import Spacing from '../components/images/spacing.svg'
+import CircleOne from '../../static/circleOne.svg'
+import CircleTwo from '../../static/circleTwo.svg'
+import CircleThree from '../../static/circleThree.svg'
+import Spacing from '../../static/spacing.svg'
 import EllipseBackground from '../miniComponents/elipseBackground';
 
 const circles = [CircleOne, Spacing, CircleTwo, Spacing, CircleThree]
 const destinations = ['/', '/method', '/time']
 
-const Menu = (props) => {
+const Menu = ({ gradient, currentStep, ...props}) => {
     const containerStyle = {
         position: 'relative',
         padding: 0,
@@ -53,15 +53,14 @@ const Menu = (props) => {
     }
     return (
         <div style={ containerStyle }>
-            <EllipseBackground  />
+            <EllipseBackground gradient={ gradient }/>
             <div style={ menuStyle }>
                 { circles.map((circle, index) => { 
                     let iteration = Math.floor((index+1)/2)
-                    console.log(`currentStep: ${props.currentStep} iteration: ${iteration}}`)
                     if(circle === Spacing) {
-                        return <img src={ circle } style={ iteration <= props.currentStep ? selectedSpacingStyle : spacingStyle }/>
+                        return <img src={ circle } style={ iteration <= currentStep ? selectedSpacingStyle : spacingStyle }/>
                     } else {
-                        return <Link to={ destinations[iteration] }><img src={ circle } style={ iteration <= props.currentStep ? selectedCircleStyle : circleStyle }/></ Link>
+                        return <Link to={ destinations[iteration] }><img src={ circle } style={ iteration <= currentStep ? selectedCircleStyle : circleStyle }/></ Link>
                     }
                 }) }
             </div>
