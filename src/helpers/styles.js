@@ -10,6 +10,11 @@ export const flexColStyle = css`
     display: flex;
     flex-direction: column;
 `
+export const centered = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 export const Center = styled.div`
     display: flex;
     justify-content: center;
@@ -18,4 +23,20 @@ export const Center = styled.div`
 //Shadows
 export const textShadowStyle = css`
     text-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+`
+
+//Rounding
+export const fullRoundingStyle = css`
+    border-radius: 999px;
+`
+
+//Fonts 
+export const righteousFont = css`
+    font-family: righteous;
+`
+
+//Setup
+export const screenFull = css`
+    height: 100%;
+    width: 100%;
 `

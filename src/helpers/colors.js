@@ -4,7 +4,7 @@ export const Colors = {
     purple: '#7551F7',
     white: '#FFFFFF',
     black: '#000000',
-    grey: '#666666',
+    grey: '#F0F0F1',
     
     //Main Page
     indexGradientFirst: '#FC8F52',
