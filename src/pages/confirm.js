@@ -1,13 +1,14 @@
 import React from 'react'
+import queryString from 'query-string'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled' 
-import Layout from '../components/layout'
+import { items } from './index'
 import LoadFont from '../components/loadFont'
 import EllipseBackground from '../miniComponents/elipseBackground'
 import { Colors } from '../helpers/colors';
 import { textShadowStyle, flexRowStyle, righteousFont, centered, screenFull } from '../helpers/styles'
-import Cell from '../components/cell';
+import Cell from '../components/cell'
 import RoundButton from '../miniComponents/roundButton';
 
 const gradient =
@@ -49,6 +50,8 @@ const ButtonContainer = styled.div`
     box-sizing: border-box;
 `
 const ConfirmPage = () => {
+    const values = queryString.parse(window.location.search)
+    console.log(`Hi ${values.meal}`)
     return (
         <div>
             <LoadFont />

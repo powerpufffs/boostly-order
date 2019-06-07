@@ -43,7 +43,7 @@ const MethodPage = () => {
 			</Menu>
 			<List>
 				{ items.map((item, index) => 
-					<StyledLink destination={`/time${queryParams}?method=${item.id}`} key={ index }>
+					<StyledLink destination={`/time${queryParams}&method=${item.id}`} key={ index }>
 						<div css={css`:hover { filter: brightness(90%)}`}>
 							<Cell gradient={{ first: '#44D1AE', second: '#479EFA'}}>
 								<Content>{ item.text }</Content>

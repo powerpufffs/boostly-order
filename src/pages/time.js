@@ -58,7 +58,7 @@ const TimePage = () => {
       </Menu>
       <List>
         { items.map((item, index) =>
-          <StyledLink destination={`/confirm${queryParams}?time=${item.id}`} key={ index }>
+          <StyledLink destination={`/confirm${queryParams}&time=${item.id}`} key={ index }>
             <Cell gradient={{ first: Colors.timeGradientFirst, second: Colors.timeGradientSecond }}>
               <Content>{ item.text }</Content>
             </Cell>

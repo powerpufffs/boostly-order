@@ -11,7 +11,7 @@ import Cell from '../components/cell'
 import { List } from '../components/layout'
 import { flexRowStyle, textShadowStyle,  } from '../helpers/styles';
 
-const items = [
+export const items = [
 	{
 		id: 0,
 		title: 'The Margherita',
