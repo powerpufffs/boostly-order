@@ -13,16 +13,20 @@ import { Colors } from '../helpers/colors';
 const items = 
 [
 	{
+		id: 0,
 		text: 'Pick Up', 
 	},
 	{
+		id: 1,
 		text: 'Dine In',
 	},
 	{
+		id: 2,
 		text: 'Delivery'
 	} 
 ]
 const MethodPage = () => {
+	const queryParams = window.location.search
 	const Content = styled(Center)`
 		padding: 10px;
 		margin-top: 10px;
@@ -34,11 +38,12 @@ const MethodPage = () => {
 			<Menu 
 				gradient={{ first: Colors.methodGradientFirst, second: Colors.methodGradientSecond}}
 				currentStep={1}
-				title='Choose a Method'
-			/>
+			>
+				Choose a Method		
+			</Menu>
 			<List>
 				{ items.map((item, index) => 
-					<StyledLink destination='/time' key={ index }>
+					<StyledLink destination={`/time${queryParams}?method=${item.id}`} key={ index }>
 						<div css={css`:hover { filter: brightness(90%)}`}>
 							<Cell gradient={{ first: '#44D1AE', second: '#479EFA'}}>
 								<Content>{ item.text }</Content>

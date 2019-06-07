@@ -15,6 +15,11 @@ export const centered = css`
     justify-content: center;
     align-items: center;
 `
+export const centeredx = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+}
 export const Center = styled.div`
     display: flex;
     justify-content: center;

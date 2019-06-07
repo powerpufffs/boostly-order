@@ -64,7 +64,7 @@ const Menu = ({ gradient, currentStep, ...props}) => {
                     }
                 }) }
             </div>
-            <h1 style={ titleStyle }>{ props.title } </h1>
+            <h1 style={ titleStyle }>{ props.children } </h1>
         </div>
     ) 
 }
